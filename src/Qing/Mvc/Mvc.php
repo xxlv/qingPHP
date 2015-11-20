@@ -1,26 +1,32 @@
 <?php
 namespace Qing\Mvc;
 
+use Qing\King\Parser\R;
+use Qing\Mvc\Http\HttpRes;
+
 class Mvc{
 
+    public static function dispatch(){
+
+    }
+
     /**
-     * TODO IMPLEMENTS THIS
-     * Mvc启动
+     * push一个R到这里
      *
+     * @param R $r
      */
-    public static function run(){
-        //初始化环境
-        self::init();
+    public static function push(R $r){
+        //解析r
+        self::dispatch();
+
+        return new HttpRes();
     }
 
 
-    /**
-     * TODO IMPLEMENTS THIS
-     * 初始化环境
-     *
-     */
-    public static function init(){}
+    public  static function DoneWith(HttpRes $res){
+        //
 
+    }
 
 
 }

@@ -1,0 +1,12 @@
+{
+    "name": "qingx/qing-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "lvxiang",
+            "email": "lvxiang119@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

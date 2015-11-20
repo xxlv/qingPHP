@@ -1,5 +1,4 @@
 <?php
-
 namespace Qing\Loader;
 
 
@@ -20,6 +19,7 @@ class AutoLoader
      */
     public function autoLoader($src_path)
     {
+
         $src_path = $src_path . '/';
 
         spl_autoload_register(function ($full_class) use ($src_path) {
@@ -43,7 +43,6 @@ class AutoLoader
         });
 
     }
-
 
 
 }
