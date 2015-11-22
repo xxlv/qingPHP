@@ -1,12 +1,13 @@
 <?php
 namespace Qing\Mvc;
 
-use Qing\King\Parser\Parser;
+use Qing\Config;
+use Qing\Parser\Parser;
 use Qing\Mvc\Http\Http;
 
 /**
  *
- * 负责打点一切
+ * 负责打点一切的巫师大人
  *
  * @package Qing\Mvc
  */
@@ -30,21 +31,16 @@ class Enchanter{
      */
     private static function init(){
 
-        #Config::init();
-        //假设配置初始化完成了，现在开始
-        echo 'init';
-
+        Config::init();
         //1获取Http请求对象
         //2解析请求头
-        $req=Http::Req();
-
-        $r=Parser::parse($req);
-
+        $req=Http::req();
+        $parser=new Parser($req);
 
         //push $r到MVC内部 将生成一个res 由doneWith方法完成此次后续任务
-        return Mvc::DoneWith(Mvc::push($r));
+        return Mvc::doneWith(Mvc::makeRes($parser->parseAndGetR()));
+
+
     }
-
-
 
 }

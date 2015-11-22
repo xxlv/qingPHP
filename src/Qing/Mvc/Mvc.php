@@ -1,7 +1,8 @@
 <?php
 namespace Qing\Mvc;
 
-use Qing\King\Parser\R;
+use Qing\Mvc\Boot\Boot;
+use Qing\R;
 use Qing\Mvc\Http\HttpRes;
 
 class Mvc{
@@ -11,20 +12,20 @@ class Mvc{
     }
 
     /**
-     * push一个R到这里
      *
      * @param R $r
+     * @return HttpRes
      */
-    public static function push(R $r){
+    public static function makeRes(R $r){
         //解析r
-        self::dispatch();
-
-        return new HttpRes();
+        //todo checkR
+        //将R转换为一个Res 此工作要交给一个人完成
+        return Boot::makeRes($r);
     }
 
-
-    public  static function DoneWith(HttpRes $res){
-        //
+    public  static function doneWith(HttpRes $res){
+        //TODO
+        return 'done';
 
     }
 

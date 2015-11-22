@@ -1,8 +1,7 @@
 <?php
-namespace Qing\King\Parser;
+namespace Qing;
 
 use Qing\King\Itf\IObj;
-use Qing\King\Itf\TraitObj;
 use Qing\Mvc\Http\HttpReq;
 
 /**
@@ -12,7 +11,6 @@ use Qing\Mvc\Http\HttpReq;
  */
 class R implements IObj{
 
-    use TraitObj;
 
     private $id;//请求id 唯一生成
     private $req;//请求
@@ -23,13 +21,45 @@ class R implements IObj{
     private $controller;//请求的controller
     private $action;//请求的action
     private $params;//携带参数
-    private $http;//http信息
+    private $http_server;//http信息
 
-    public function __construct(HttpReq $req)
+
+
+    /**
+     * @return mixed
+     */
+    public function getParams()
     {
-        $this->setReq($req);
+        return $this->params;
+    }
+
+    /**
+     * @param mixed $params
+     */
+    public function setParams($params)
+    {
+        $this->params = $params;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHttpServer()
+    {
+        return $this->http_server;
+    }
+
+    /**
+     * @param mixed $http_server
+     */
+    public function setHttpServer($http_server)
+    {
+        $this->http_server = $http_server;
+        return $this;
 
     }
+
 
     /**
      * @return mixed
@@ -45,6 +75,7 @@ class R implements IObj{
     public function setId($id)
     {
         $this->id = $id;
+        return $this;
     }
 
     /**
@@ -61,6 +92,8 @@ class R implements IObj{
     public function setReq($req)
     {
         $this->req = $req;
+        return $this;
+
     }
 
     /**
@@ -77,6 +110,8 @@ class R implements IObj{
     public function setRes($res)
     {
         $this->res = $res;
+        return $this;
+
     }
 
     /**
@@ -93,6 +128,8 @@ class R implements IObj{
     public function setType($type)
     {
         $this->type = $type;
+        return $this;
+
     }
 
     /**
@@ -109,6 +146,8 @@ class R implements IObj{
     public function setPath($path)
     {
         $this->path = $path;
+        return $this;
+
     }
 
     /**
@@ -125,6 +164,8 @@ class R implements IObj{
     public function setModule($module)
     {
         $this->module = $module;
+        return $this;
+
     }
 
     /**
@@ -141,6 +182,8 @@ class R implements IObj{
     public function setController($controller)
     {
         $this->controller = $controller;
+        return $this;
+
     }
 
     /**
@@ -157,12 +200,14 @@ class R implements IObj{
     public function setAction($action)
     {
         $this->action = $action;
+        return $this;
+
     }
 
 
-    public static function newSelf($req)
+    public static function newSelf()
     {
-        return new R($req);
+        return new R();
     }
 
     public static function delSelf()

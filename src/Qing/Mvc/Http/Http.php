@@ -12,7 +12,7 @@ class Http{
      *
      * @return null|HttpReq
      */
-    public static function Req(){
+    public static function req(){
         if(!self::$req){
             self::$req=new HttpReq();
 
@@ -28,7 +28,7 @@ class Http{
      * @return null|HttpReq
      *
      */
-    public static function Res(){
+    public static function res(){
 
         if(!self::$req){
             self::$req=new HttpReq();

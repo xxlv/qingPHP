@@ -9,7 +9,7 @@ namespace Qing\King\Itf;
  */
 interface IObj{
 
-    public static function newSelf($conf);
+    public static function newSelf();
 
     public static function delSelf();
 
