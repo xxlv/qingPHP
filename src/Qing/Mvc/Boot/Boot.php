@@ -2,6 +2,8 @@
 namespace Qing\Mvc\Boot;
 
 use Qing\Mvc\Http\HttpRes;
+use Qing\Mvc\Mvc;
+use Qing\Mvc\MvcHandle;
 use Qing\R;
 
 class Boot{
@@ -15,18 +17,17 @@ class Boot{
      */
     public static function makeRes(R $r){
 
-        //r已经检查完毕
-        //TODO 需要启动执行业务逻辑
-        $module=$r->getModule();
-
-        return Boot::loadModule($module)
-            ->exec($r->getController(),$r->getAction());
+        return Boot::runMvc($r);
     }
 
 
-    public static function loadModule(){
+    public static function runMvc(R $r){
+        //mvc Handle 处理
+        $mvc_handle=MvcHandle::getInstance();
+        //执行R
+        $mvc_handle->exec($r);
 
-        return MvcHandle::class;
+        return new HttpRes();
 
 
     }
