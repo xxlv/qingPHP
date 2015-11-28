@@ -18,9 +18,9 @@ class Enchanter{
      * Mvc启动
      *
      */
-    public static function run(){
+    public static function run($conf=[]){
         //初始化环境
-        self::init();
+        self::init($conf);
     }
 
 
@@ -29,9 +29,9 @@ class Enchanter{
      * 初始化环境
      *
      */
-    private static function init(){
+    private static function init($conf){
 
-        Config::init();
+        Config::init($conf);
         //1获取Http请求对象
         //2解析请求头
         $req=Http::req();
