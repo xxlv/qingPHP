@@ -38,6 +38,7 @@ class Parser{
 
         $req=$this->getReq();
         //fill R
+
          $r->setId(Comm::makeReqId($req))
             ->setController($this->getController())
             ->setAction($this->getAction())

@@ -8,12 +8,18 @@ namespace Qing\Loader;
  */
 class FileLoader{
 
-    public static function load($name,$once=false){
 
-        if($once){
-            return include_once($once);
-        }
-        return include($name);
+    /**
+     *
+     *
+     * @param $name
+     * @param bool|false $once
+     * @return mixed
+     */
+    public static function load($name,$once=false){
+        return include_once $name;
+
     }
+
 
 }

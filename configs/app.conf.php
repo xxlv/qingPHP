@@ -2,7 +2,7 @@
 
 return [
     'app_name'=>'application',//app name
-    'app_path'=>'./app',
+    'app_path'=>'../app/',
     'modules_path'=>[
         'admin'=>'./admin'//相对于app path
     ],

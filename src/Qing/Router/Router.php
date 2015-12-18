@@ -8,7 +8,7 @@ class Router {
         return 'index';
     }
     public static function findModule($path){
-        return 'Default';
+        return 'Home';
     }
     public static function findController($path){
         return 'Index';

@@ -1,6 +1,7 @@
 <?php
 namespace Qing\Mvc;
 
+use Qing\Loader\ClassLoader;
 use Qing\Config;
 use Qing\R;
 
@@ -46,7 +47,25 @@ class MvcHandle{
 //        $module_map=Config::get('module');
         //将路由解析到文件
         $config= Config::$config;
+
+        $module=$r->getModule();
+        $controller=$r->getController();
+        $action=$r->getAction();
+        $bootModule=$config['app_path'].$module.'/Bootstrap.php';
+        $bootModule='./../app/Home/Bootstrap.php';
+        $mBoot=ClassLoader::loadClassByName($bootModule);
+        //执行模块的启动方法
+
+        //获取模块的配置参数
+        $mBootConfig=$mBoot->onBegin();
+
+
+
+        var_dump($r);
         var_dump($config);
+        var_dump($bootModule);
+        echo __FILE__;
+
         exit;
         //include file
         //将配置的path完成自动名称空间的注入
