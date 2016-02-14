@@ -1,5 +1,6 @@
 > qingPHP
 > by xxlv  lvxiang119@gmail.com
+[![Build Status](https://travis-ci.org/xxlv/qingPHP?branch=master)](https://travis-ci.org/xxlv/qingPHP)
 
 ##### 框架分为如下四个部分
 
@@ -41,4 +42,3 @@
 - 3.1.2 执行moudle的onEnd方法
 - 3.1.3 执行application的OnEnd方法
 - 3.2 构造http响应并返回
-
