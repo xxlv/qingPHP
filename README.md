@@ -1,6 +1,6 @@
 > qingPHP
 > by xxlv  lvxiang119@gmail.com
-[![Build Status](https://travis-ci.org/xxlv/qingPHP?branch=master)](https://travis-ci.org/xxlv/qingPHP)
+[![Build Status](https://travis-ci.org/xxlv/qingPHP.svg?branch=master)](https://travis-ci.org/xxlv/qingPHP)
 
 ##### 框架分为如下四个部分
 
